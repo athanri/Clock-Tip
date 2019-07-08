@@ -81,8 +81,8 @@ function validateForm() {
   var noOfPeople = document.forms['calc']['people'].value;
 
   var totalPPS = bill / noOfPeople;
-  showElement(totalPPS);
 }
+
 /********************************************************
  
  This is the end of the code for the Calculator. PierceJ
@@ -122,11 +122,4 @@ window.addEventListener('DOMContentLoaded', function() {
  This is the end of the code for the Clock. PierceJ
 
 *****************************************************/
-  var total = document.getElementById('total');
-  //total.style.display = 'none';
-
-  // var showElement = function(totalPPS) {
-  total.style.display = 'block';
-  total.innerHTML = 'You each owe: €';
-  // };
 });
