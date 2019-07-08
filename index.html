@@ -146,7 +146,7 @@
     </div>
   </div>
   <div class="container">
-    <form name="calc" onsubmit="return validateForm()">
+    <form name="calc">
     <h1 class="utility" id="calc">Tip Calculator</h1>
     <img
     class="background"
@@ -172,7 +172,7 @@
       </select>
       <br>
       <br>
-      <input type="submit" class="btn btn-success" id="btnCalc" value="Calculate">
+      <input type="button" class="btn btn-success" id="btnCalc" onclick="validateForm()" value="calculate">
       <p id="total"></p>
     </div>
     </form>
