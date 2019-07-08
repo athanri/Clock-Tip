@@ -76,13 +76,28 @@ var changeToMeridan = function(value) {
  This is the code for the Calculator. PierceJ
 
 **********************************************/
+var tipPercentMultiplier = 0;
 function validateForm() {
   var bill = document.forms['calc']['bill'].value;
   var noOfPeople = document.forms['calc']['people'].value;
+  var totalPPS = 0;
+  if (
+    tipPercentMultiplier === 0 ||
+    tipPercentMultiplier === 'Service Standard'
+  ) {
+    totalPPS = bill / noOfPeople;
+  } else {
+    totalPPS = (bill * tipPercentMultiplier) / noOfPeople;
+  }
 
-  var totalPPS = bill / noOfPeople;
+  alert(totalPPS);
 }
 
+function setTipValue(tipPercent) {
+  payTip = true;
+  tipPercentMultiplier = tipPercent;
+  console.log(tipPercentMultiplier);
+}
 /********************************************************
  
  This is the end of the code for the Calculator. PierceJ

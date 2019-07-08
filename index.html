@@ -144,40 +144,83 @@
                   </div>
                 </div>
     </div>
-  </div>
   <div class="container">
     <form name="calc">
     <h1 class="utility" id="calc">Tip Calculator</h1>
     <img
     class="background"
     id="background"
-    src="./img/ERIN.png"
+    src="./img/erin.jpg"
     alt="background"
     />
-    <div class="centre-left-erin form-group">
+    <div class="centre">
+      <form>
       <input type="number" name="bill" class="form-control" id="tip" placeholder="Bill Amount €" required>
       <br>
-      <br>
       <input type="number" name="people" class="form-control" id="people" placeholder="Number of People" required>
-    </div>
-
-    <div class="centre-right-erin form-group">
-      <select class="custom-select custom-select-sm form-control">
+        <br>
+      <select class="custom-select custom-select-sm form-control" onchange="setTipValue(value)">
         <option selected>Service Standard</option>
-        <option value="1">Not Great (5%)</option>
-        <option value="2">Middling (10%)</option>
-        <option value="3">Good (15%)</option>
-        <option value="4">Mighty (20%)</option>
-        <option value="5">Top Notch (25%)</option>
+        <option value="1.05">Not Great (5%)</option>
+        <option value="1.10">Middling (10%)</option>
+        <option value="1.15">Good (15%)</option>
+        <option value="1.20">Mighty (20%)</option>
+        <option value="1.25">Top Notch (25%)</option>
       </select>
       <br>
       <br>
-      <input type="button" class="btn btn-success" id="btnCalc" onclick="validateForm()" value="calculate">
+      <input type="button" class="btn btn-success" id="btnCalc" onclick="validateForm()" data-toggle="modal"
+      data-target="#totalPerPerson" value="calculate">
       <p id="total"></p>
-    </div>
     </form>
-
   </div>
+
+  <!-- Modal -->
+  <div
+  class="modal fade"
+  id="totalPerPerson"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="modalTotalHeader">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Bill Total
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBodyTotal">
+        <h6>Bill</h6><p id="billPara">€</p>
+        <h6>No of People</h6><p id="peoplePara"></p>
+        <h6>Tip</h6><p id="percentagePara">%</p>
+        <hr>
+        <h5>Total Per Person</h5><p id="totalPerPerson">€</p>
+      </div>
+      <div class="modal-footer" id="modalFooterTotal">
+        <button
+          type="button"
+          class="btn btn-success"
+          id="btnCalc"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

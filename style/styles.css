@@ -32,20 +32,12 @@
   color: white;
 }
 
-.centre-left-erin {
+.centre {
   position: absolute;
-  top: 60%;
-  left: 5%;
+  bottom: 3%;
+  left: 25%;
   color: white;
-  opacity: 0.5;
-}
-
-.centre-right-erin {
-  position: absolute;
-  top: 60%;
-  right: 5%;
-  color: white;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 #cardMaroon {
@@ -64,4 +56,20 @@
 
 #btnCalc {
   border: gold solid 2px;
+}
+
+#totalPerPerson {
+  background-color: gold;
+  color: green;
+}
+
+#modalTotalHeader,
+#modalFooterTotal {
+  background-color: green;
+  color: gold;
+}
+
+#modalBodyTotal {
+  background-color: gold;
+  color: green;
 }
