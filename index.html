@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Galway GAA Clock</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style/styles.css" />
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <h1 class="utility">Galway Clock</h1>
+      <img
+        class="background"
+        id="background"
+        src="./img/background.jpg"
+        alt="background"
+      />
+
+      <div class="centre-right">
+                <!-- Button trigger modal -->
+                <button
+                type="button"
+                class="btn btn-dark"
+                data-toggle="modal"
+                data-target="#exampleModalLong"
+              >
+                Time Since
+              </button>
+            </div>
+      
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModalLong"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Time Since Last Snr Mens All Ireland
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 id="timeSince">Hours</h5>
+              <h6 id="timeSinceHrs"></h6>
+              <h5 id="timeSince">Minutes</h5>
+              <h6 id="timeSinceMins"></h6>
+              <h5 id="timeSince">Seconds</h5>
+              <h6 id="timeSinceSnd"></h6>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="centre-left">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-light"
+          data-toggle="modal"
+          data-target="#timeNowModalLong"
+        >
+          Time Now
+        </button>
+      </div>
+
+                  <!-- Modal -->
+                  <div
+                  class="modal fade"
+                  id="timeNowModalLong"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalLongTitle"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">
+                          Time Now
+                        </h5>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          <select
+                          name="sltFormat"
+                          id="sltFormat"
+                          onchange="changeToMeridan(value)"
+                        >
+                          <option value="24">24hr</option>
+                          <option value="12" selected>AM/PM</option>
+                        </select>
+                        <h5 id="liveTime"></h5>
+                        <h5 id="date">Date</h5>
+                        <h5 id="liveDate"></h5>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </div>
+  </div>
+  <div class="container">
+    <form name="calc" onsubmit="return validateForm()">
+    <h1 class="utility" id="calc">Tip Calculator</h1>
+    <img
+    class="background"
+    id="background"
+    src="./img/ERIN.png"
+    alt="background"
+    />
+    <div class="centre-left-erin form-group">
+      <input type="number" name="bill" class="form-control" id="tip" placeholder="Bill Amount €" required>
+      <br>
+      <br>
+      <input type="number" name="people" class="form-control" id="people" placeholder="Number of People" required>
+    </div>
+
+    <div class="centre-right-erin form-group">
+      <select class="custom-select custom-select-sm form-control">
+        <option selected>Service Standard</option>
+        <option value="1">Not Great (5%)</option>
+        <option value="2">Middling (10%)</option>
+        <option value="3">Good (15%)</option>
+        <option value="4">Mighty (20%)</option>
+        <option value="5">Top Notch (25%)</option>
+      </select>
+      <br>
+      <br>
+      <input type="submit" class="btn btn-success" id="btnCalc" value="Calculate">
+      <p id="total"></p>
+    </div>
+    </form>
+
+  </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+#background {
+  width: 100%;
+  height: auto;
+  border: 5px solid #000000;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  color: #7a130e;
+}
+
+/* Bottom left text */
+.centre-right {
+  position: absolute;
+  top: 65%;
+  right: 8%;
+}
+
+/* Style Select dropdown */
+#sltFormat {
+  background: #7a130e;
+  color: white;
+}
+
+.centre-left {
+  position: absolute;
+  top: 65%;
+  left: 8%;
+  color: white;
+}
+
+.centre-left-erin {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  color: white;
+  opacity: 0.5;
+}
+
+.centre-right-erin {
+  position: absolute;
+  top: 60%;
+  right: 5%;
+  color: white;
+  opacity: 0.5;
+}
+
+#cardMaroon {
+  background-color: #7a130e;
+  color: white;
+}
+
+.utility {
+  text-align: center;
+  padding-top: 10px;
+}
+
+#calc {
+  color: green;
+}
+
+#btnCalc {
+  border: gold solid 2px;
+}
