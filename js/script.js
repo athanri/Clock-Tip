@@ -78,19 +78,32 @@ var changeToMeridan = function(value) {
 **********************************************/
 var tipPercentMultiplier = 0;
 function validateForm() {
-  var bill = document.forms['calc']['bill'].value;
   var noOfPeople = document.forms['calc']['people'].value;
-  var totalPPS = 0;
+  var bill = document.forms['calc']['bill'].value;
   if (
-    tipPercentMultiplier === 0 ||
-    tipPercentMultiplier === 'Service Standard'
+    bill === '0' ||
+    bill === null ||
+    bill === undefined ||
+    bill === '' ||
+    (noOfPeople === '0' ||
+      noOfPeople === null ||
+      noOfPeople === undefined ||
+      noOfPeople === '')
   ) {
-    totalPPS = bill / noOfPeople;
+    alert("'Bill Amount' or 'Number of People' field(s) cannot be blank or 0");
   } else {
-    totalPPS = (bill * tipPercentMultiplier) / noOfPeople;
+    var totalPPS = 0;
+    if (
+      tipPercentMultiplier === 'Service Standard' ||
+      tipPercentMultiplier === 0
+    ) {
+      totalPPS = bill / noOfPeople;
+    } else {
+      totalPPS = (bill * tipPercentMultiplier) / noOfPeople;
+    }
+    $('#totalPerPerson').modal('show');
+    updateModal(bill, noOfPeople, totalPPS);
   }
-
-  alert(totalPPS);
 }
 
 function setTipValue(tipPercent) {
@@ -138,3 +151,42 @@ window.addEventListener('DOMContentLoaded', function() {
 
 *****************************************************/
 });
+
+/*********************************************
+ 
+ This is the code for the Calculator. PierceJ
+
+**********************************************/
+function updateModal(bill, noOfPeople, totalPPS) {
+  $('#billPara').html('€' + bill);
+  $('#peoplePara').html(noOfPeople);
+
+  switch (tipPercentMultiplier) {
+    case '1.05':
+      percentage = 5;
+      break;
+    case '1.10':
+      percentage = 10;
+      break;
+    case '1.15':
+      percentage = 15;
+      break;
+    case '1.20':
+      percentage = 20;
+      break;
+    case '1.25':
+      percentage = 25;
+      break;
+    default:
+      percentage = 0;
+  }
+
+  $('#percentagePara').html(percentage + '%');
+  $('#totalPerPersonPara').html('€' + totalPPS);
+}
+
+/********************************************************
+ 
+ This is the end of the code for the Calculator. PierceJ
+
+ ********************************************************/
