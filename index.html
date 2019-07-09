@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Galway GAA Clock</title>
+    <title>Utilities</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -12,6 +12,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./style/styles.css" />
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/70e767b647.js"></script>
     <script src="./js/script.js"></script>
   </head>
   <body>
@@ -153,7 +155,7 @@
     src="./img/erin.jpg"
     alt="background"
     />
-    <div class="centre">
+    <div class="centre_1">
       <form>
       <input type="number" name="bill" class="form-control" id="tip" placeholder="Bill Amount €" required>
       <br>
@@ -218,6 +220,32 @@
     </div>
   </div>
 </div>
+</div>
+
+<div class="container">
+  <h1 class="utility" id="todo">ToDo List</h1>
+  <img
+    class="background"
+    id="background"
+    src="./img/MUFC.jpg"
+    alt="background"
+    />
+    <div class="centre_2">
+      <p id="instruction_1">Enter text into the input field to add items to your list.</p>
+      <p id="instruction_2">Click the item to mark it as complete.</p>
+      <p id="instruction_3">Click the "X" to remove the item from your list.</p>
+        <div class="col-12">
+          <input id="userInput" type="text" placeholder="New item..." maxlength="27">
+          <button class="btn btn-dark" id="enter" onclick="addTodo()"><i class="fas fa-pencil-alt"></i></button>
+        </div>
+
+    </div>
+    <div class="row"></div>
+    <div class="listItems col-12 centre_3">
+      <ul class="col-12 offset-0 col-sm-8 offset-sm-2" id="list">
+      </ul>
+    </div>
+  </div>
 </div>
 
 

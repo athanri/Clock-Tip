@@ -117,6 +117,40 @@ function setTipValue(tipPercent) {
 
  ********************************************************/
 
+/*********************************************
+ 
+ This is the code for the Todo List. PierceJ
+
+**********************************************/
+function addTodo() {
+  var todo = $('#userInput');
+  if (todo.val() != '') {
+    $('#list').append(
+      '<li onclick=markComplete(this)>' +
+        todo.val() +
+        '<button onclick="deleteListItem(this.closest(\'li\'))">X</button></li>'
+    );
+    todo.val('');
+  } else {
+    alert('Please enter a task name');
+  }
+}
+
+function markComplete(listItem) {
+  listItem.style.background = 'green';
+  listItem.style.textDecoration = 'line-through';
+}
+
+function deleteListItem(button) {
+  button.remove();
+}
+
+/********************************************************
+ 
+ This is the end of the code for the Todo List. PierceJ
+
+ ********************************************************/
+
 window.addEventListener('DOMContentLoaded', function() {
   /*****************************************
  
