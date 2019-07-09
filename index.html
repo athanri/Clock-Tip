@@ -224,12 +224,6 @@
 
 <div class="container">
   <h1 class="utility" id="todo">ToDo List</h1>
-  <img
-    class="background"
-    id="background"
-    src="./img/MUFC.jpg"
-    alt="background"
-    />
     <div class="centre_2">
       <p id="instruction_1">Enter text into the input field to add items to your list.</p>
       <p id="instruction_2">Click the item to mark it as complete.</p>
@@ -238,13 +232,14 @@
           <input id="userInput" type="text" placeholder="New item..." maxlength="27">
           <button class="btn btn-dark" id="enter" onclick="addTodo()"><i class="fas fa-pencil-alt"></i></button>
         </div>
+        <div class="row">    
+            <div class="listItems col-12">
+            <ul class="col-12 offset-0 col-sm-8 offset-sm-2" id="list">
+            </ul>
+          </div>
+        </div>
+    </div>
 
-    </div>
-    <div class="row"></div>
-    <div class="listItems col-12 centre_3">
-      <ul class="col-12 offset-0 col-sm-8 offset-sm-2" id="list">
-      </ul>
-    </div>
   </div>
 </div>
 

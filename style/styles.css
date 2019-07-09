@@ -135,11 +135,15 @@ li > button {
 
   .centre_2,
   .centre_3 {
-    position: absolute;
+    position: STATIC;
     bottom: 1.5%;
     left: 2%;
     color: white;
     opacity: 0.75;
+    width: 100%;
+    height: auto;
+    border: 5px solid #000000;
+    background-color: red;
   }
 }
 
@@ -153,19 +157,13 @@ li > button {
   }
 
   .centre_2 {
-    position: absolute;
-    bottom: 65%;
+    position: static;
+    bottom: 15%;
     left: 30%;
     color: white;
     opacity: 0.75;
-  }
-
-  .centre_3 {
-    position: absolute;
-    width: 95%;
-    top: 35%;
-    left: 2.5%;
-    color: yellow;
-    opacity: 0.75;
+    width: 100%;
+    border: 5px solid #000000;
+    background-color: red;
   }
 }
